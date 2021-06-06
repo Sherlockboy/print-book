@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'formula1'])->name('formula1');
 Route::get('/formula2', [HomeController::class, 'formula2'])->name('formula2');
+
+Route::prefix('render')->name('render.')->group(function() {
+   Route::get('formula1', [HomeController::class, 'renderFormula1'])->name('formula1');
+   Route::get('formula2', [HomeController::class, 'renderFormula2'])->name('formula2');
+});

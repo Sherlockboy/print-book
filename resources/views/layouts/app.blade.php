@@ -10,7 +10,7 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="h-screen">
+<body>
     <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="h-full bg-gray-200">
         @include('components.navbar')
