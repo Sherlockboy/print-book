@@ -1,17 +1,24 @@
 @php
     $first = '';
     $second = '';
-    foreach ($rows as $key => $row) {
-        if($first){
-            $first = "{$first},{$row['first']}";
-        } else {
-            $first = $row['first'];
-        }
-        
-        if($second){
-            $second = "{$second},{$row['second']}";
-        } else {
-            $second = $row['second'];
+    if($formula == 1){
+        $first = $rows['first'];
+        $second = $rows['second'];
+    }
+
+    if($formula == 2){
+        foreach ($rows as $key => $row) {
+            if($first){
+                $first = "{$first},{$row['first']}";
+            } else {
+                $first = $row['first'];
+            }
+            
+            if($second){
+                $second = "{$second},{$row['second']}";
+            } else {
+                $second = $row['second'];
+            }
         }
     }
 @endphp

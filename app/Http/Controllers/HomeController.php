@@ -11,6 +11,20 @@ class HomeController extends Controller
         return view('pages.formula1');
     }
 
+    public function renderFormula1(Request $request)
+    {
+        if ($request->page_count % 4) {
+            $rows = $this->singleRow(1, 0);
+        } else {
+            $rows = $this->singleRow(1, $request->page_count);
+        }
+
+        return view('components.row', [
+            'rows' => $rows,
+            'formula' => 1
+        ])->render();
+    }
+
     public function formula2()
     {
         return view('pages.formula2');
@@ -20,7 +34,10 @@ class HomeController extends Controller
     {
         $rows = $this->generateRows($request->page_count);
 
-        return view('components.row', compact('rows'))->render();
+        return view('components.row', [
+            'rows' => $rows,
+            'formula' => 2
+        ])->render();
     }
 
     protected function generateRows($page_count)

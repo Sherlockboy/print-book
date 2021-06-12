@@ -8,9 +8,9 @@
     <div class="py-8">
         <div class="flex flex-row mb-1 sm:mb-0 justify-between w-full">
             <div class="text-end">
-                <form class="flex w-full max-w-sm space-x-3">
+                <div class="flex w-full max-w-sm space-x-3">
                     <div class=" relative ">
-                        <input type="number" id="pageCount" name="page_count"
+                        <input type="number" id="page_count" name="page_count"
                             class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                             placeholder="#sahifalar soni" />
                     </div>
@@ -19,7 +19,7 @@
                         type="button">
                         Filter
                     </button>
-                </form>
+                </div>
             </div>
         </div>
         <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
@@ -40,11 +40,14 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody id="formula1_content">
-                        
+                    <tbody id="formula1-content">
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script src="{{ asset('js/formula1.js') }}"></script>
 @endsection
