@@ -6,7 +6,7 @@
         $second = $rows['second'];
     }
 
-    if($formula == 2){
+    if(in_array($formula, [2, 3])){
         foreach ($rows as $key => $row) {
             if($first){
                 $first = "{$first},{$row['first']}";
