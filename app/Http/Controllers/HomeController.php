@@ -47,7 +47,7 @@ class HomeController extends Controller
 
     public function renderFormula3(Request $request)
     {
-        $rows = $this->generateRows($request->page_count, 3);
+        $rows = $this->generateReversedRows($request->page_count);
 
         return view('components.row', [
             'rows' => $rows,
@@ -77,6 +77,11 @@ class HomeController extends Controller
         }
 
         return $rows;
+    }
+
+    protected function generateReversedRows($page_count)
+    {
+        return array_reverse($this->generateRows($page_count, 3));
     }
 
     protected function singleRow($start, $end)
